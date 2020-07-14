@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- head definitions go here -->
+</head>
+
+<body>
+    <textarea id="txtArea"></textarea>
+    <button id="btn1" onclick="convertHTML()">
+        Analyse
+    </button>
+    <button id="btn2">
+        Clear
+    </button>
+    <div id="output">
+
+    </div>
+
+
+    <script>
+        function clearTxtArea() {
+
+        }
+        function convertHTML() {
+            var html = document.getElementById('txtArea').value; //Idk of dit werkt lets see
+            var doc = new DOMParser().parseFromString(html, "text/xml"); //Zet code om van "<div> fzfhez </div>" etc naar echte HTML elementen
+            
+            console.log(doc)
+            if(doc.hasChildNodes){
+                console.log("WE HAVE FOUND CHILDREN AAAAAAAA")
+            }
+            doc.childNodes.forEach(element => {
+                console.log(element)
+            });
+        }
+    </script>
+</body>
+
+</html>
